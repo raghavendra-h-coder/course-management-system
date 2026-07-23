@@ -33,6 +33,7 @@ urlpatterns = [
         ),
     path('api/courses/', include("courses.urls")),
     path('api/lessons/', include("lessons.urls")),
+    path('api/enrollments/', include("enrollments.urls")),
 ]
 
 urlpatterns += static(

@@ -27,6 +27,7 @@ class EnrollmentReadSerializer(serializers.ModelSerializer):
 
 class EnrollmentWriteSerializer(serializers.ModelSerializer):
     course_id = serializers.PrimaryKeyRelatedField(source='course', queryset=Course.objects.all(), write_only=True)
+    student_id = serializers.PrimaryKeyRelatedField(source='student', queryset=StudentProfile.objects.all(), write_only=True)
     class Meta:
         model = Enrollment
-        fields = ['course_id']
+        fields = ['course_id', 'student_id']
